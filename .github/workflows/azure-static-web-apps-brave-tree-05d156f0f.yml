@@ -20,34 +20,29 @@ jobs:
           submodules: true
           lfs: false
 
-      # 👇 Ensure Node 20 (Next.js 15/16 requires >=20.9)
       - name: Setup Node.js 20
         uses: actions/setup-node@v4
         with:
           node-version: '20.11.1'
 
-      # 👇 Install dependencies with relaxed peer deps
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      # 👇 Build Next.js (for static export)
       - name: Build Next.js app
         run: npm run build
 
-      # 👇 Deploy built app to Azure Static Web Apps
       - name: Deploy to Azure Static Web Apps
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
+        env:
+          Oryx_AppType: "nodejs"
+          Oryx_NodeJSVersion: "20.11.1"  
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BRAVE_TREE_05D156F0F }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (PR comments, etc.)
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-
-          ###### Repository/Build Configurations ######
-          app_location: "/" # App source code path
-          api_location: ""  # No API folder
-          output_location: ".next" # Next.js build output folder
-          ###### End of Repository/Build Configurations ######
+          app_location: "/"
+          output_location: ".next"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
