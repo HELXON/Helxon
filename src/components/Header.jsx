@@ -1,66 +1,43 @@
 "use client";
 
-import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { Logo } from "./Logo";
 import AboutUsLogo from "@/app/assets/AboutUs_icons/LOGO.svg";
 import { Button } from "./ui/Button";
 import { GetStartedModal } from "./GetStartedModal";
+import Image from "next/image";
 import "./Header.scss";
-
-const HERO_SELECTORS = [
-  ".about-us-hero",
-  ".contact-us-page__hero",
-  ".faq-page__hero",
-  ".vorxoc-hero__hero-container",
-];
 
 export function Header() {
   const router = useRouter();
   const pathname = usePathname();
 
   const [isInHeroSection, setIsInHeroSection] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const isSpecialPage = useMemo(
-    () =>
-      pathname === "/about-us" ||
-      pathname === "/contact-us" ||
-      pathname === "/faq" ||
-      pathname === "/platform",
-    [pathname],
-  );
+  const isAboutUsPage = pathname === '/about-us' || pathname === '/contact-us' || pathname === '/faq' || pathname === '/platform';
 
   useEffect(() => {
+    if (!isAboutUsPage) {
+      setIsInHeroSection(false);
+      return;
+    }
+
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      setIsScrolled(scrollY > 10);
-
-      if (!isSpecialPage) {
-        return;
+      const heroSection = document.querySelector('.about-us-hero') || document.querySelector('.contact-us-page__hero') || document.querySelector('.faq-page__hero') || document.querySelector('.vorxoc-hero__hero-container');
+      if (heroSection) {
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+        const scrollPosition = window.scrollY + 100; // Account for header height
+        setIsInHeroSection(scrollPosition < heroBottom);
       }
-
-      const heroSection = HERO_SELECTORS.map((selector) =>
-        document.querySelector(selector),
-      ).find(Boolean);
-
-      if (!heroSection) {
-        setIsInHeroSection(false);
-        return;
-      }
-
-      const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-      const scrollPosition = scrollY + 100;
-      setIsInHeroSection(scrollPosition < heroBottom);
     };
 
+    // Initial check
     handleScroll();
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isSpecialPage, pathname]);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isAboutUsPage]);
 
   const handleGetStarted = () => {
     setIsModalOpen(true);
@@ -74,17 +51,21 @@ export function Header() {
     router.push("/");
   };
 
-  const showWhiteHeader = isSpecialPage && isInHeroSection;
+  const showWhiteHeader = isAboutUsPage && isInHeroSection;
 
   return (
     <>
-      <header className={`header ${showWhiteHeader ? 'header--white' : ''} ${isScrolled ? 'header--scrolled' : ''}`}>
+      <header className={`header ${showWhiteHeader ? 'header--white' : ''}`}>
         <div className="header__container">
           <div className="header__content">
             {/* Logo */}
             <div className="header__logo" onClick={handleLogoClick}>
               {showWhiteHeader ? (
-                <img src={AboutUsLogo} alt="Helxon" className="header__logo-img" />
+                <Image src={AboutUsLogo} alt="Helxon" className="header__logo-img" 
+                width={156}
+                height={51}
+                priority
+                  />
               ) : (
                 <Logo />
               )}
