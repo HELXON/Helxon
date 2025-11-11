@@ -57,12 +57,10 @@
     "react": "19.2.0",
     "react-day-picker": "9.8.0",
     "react-dom": "19.2.0",
-    "react-helmet-async": "^2.0.5",
     "react-hook-form": "^7.54.1",
     "react-resizable-panels": "^2.1.7",
     "react-router-dom": "latest",
     "recharts": "2.15.0",
-    "sitemap-generator-cli": "^7.5.0",
     "sonner": "^1.7.1",
     "vaul": "^0.9.6",
     "zod": "^3.24.1"

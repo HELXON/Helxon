@@ -1,5 +1,6 @@
-"use client";
+'use client';
 
+import React from 'react';
 import { motion } from 'motion/react';
 import { useRouter, usePathname } from 'next/navigation';
 import { ArrowRight } from 'lucide-react';
@@ -28,7 +29,7 @@ export function AboutUsCTA() {
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
           >
             {isFAQPage ? 'For further information please contact the Helxon team ' : 'Ready to Secure Your Business?'}
           </motion.h2>
@@ -38,7 +39,7 @@ export function AboutUsCTA() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
             Join hundreds of companies that trust VorXOC to protect their digital assets.
           </motion.p>}
@@ -48,7 +49,7 @@ export function AboutUsCTA() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
           >
             {!isFAQPage && <motion.button
               className="about-us-cta__button about-us-cta__button--primary"
@@ -76,4 +77,3 @@ export function AboutUsCTA() {
     </section>
   );
 }
-

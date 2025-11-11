@@ -1,0 +1,21 @@
+.about-us-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #ffffff;
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    background: #cccaca;
+    margin: 0;
+    max-width: 1581px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 72px;
+
+    @media (max-width: 768px) {
+      padding: 0 2rem;
+    }
+  }
+}
+

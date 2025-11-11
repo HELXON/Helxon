@@ -1,0 +1,114 @@
+.about-us-hero {
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+  background: #ffffff;
+  padding: clamp(5.5rem, 14vw, 7rem) 0 clamp(6rem, 16vw, 7.5rem);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(120%, 165vw, 200%);
+    height: clamp(70%, 75vw, 90%);
+    background: #081766;
+    border-bottom-left-radius: 48% 38%;
+    border-bottom-right-radius: 48% 38%;
+    z-index: -1;
+  }
+
+  @media (max-width: 1024px) {
+    padding: clamp(4.5rem, 12vw, 6rem) 0 clamp(6rem, 20vw, 9rem);
+  }
+
+  @media (max-width: 768px) {
+    padding: clamp(3.5rem, 16vw, 4.5rem) 0 clamp(5rem, 24vw, 7.5rem);
+  }
+
+  @media (max-width: 480px) {
+    padding: clamp(3rem, 18vw, 4rem) 0 clamp(4.5rem, 28vw, 6.5rem);
+  }
+
+  &__background {
+    display: none;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 4vw, 3rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 52rem;
+    width: 100%;
+  }
+
+  &__logo-wrapper {
+    width: clamp(160px, 18vw, 150px);
+    height: clamp(160px, 18vw, 150px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 20px 50px rgba(8, 23, 102, 0.35));
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__title {
+    font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, Segoe UI,
+      Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    font-weight: 700;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    line-height: 1.05;
+    text-align: center;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -0.02em;
+
+    @media (max-width: 768px) {
+      font-size: clamp(2.25rem, 7vw, 3.25rem);
+    }
+
+    @media (max-width: 480px) {
+      font-size: clamp(2rem, 6.5vw, 2.75rem);
+    }
+  }
+
+  &__description {
+    font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, Segoe UI,
+      Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    font-weight: 400;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.6;
+    text-align: center;
+    color: #f1f5ff;
+    margin: 0;
+    max-width: 46rem;
+    width: 100%;
+  }
+}
+
