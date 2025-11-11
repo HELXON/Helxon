@@ -58,12 +58,6 @@ export function UnifiedSolution() {
             One intelligent SOC platform
           </h1>
 
-          <div className="unified-solution__sub-headline">
-            <p>Monitor Everything.</p>
-            <p>Catch Every Threat.</p>
-            <p>Respond Instantly.</p>
-          </div>
-
           <p className="unified-solution__description">
             VORxoc by Helxon is a unified Security Operations Center as a Service
             (SOCaaS) platform that integrates with any security tool or data
