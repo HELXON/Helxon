@@ -205,7 +205,7 @@
     max-width: 60ch;                /* ideal reading line length */
     font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
     font-weight: 450;
-    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    font-size: clamp(1rem, 1.2vw, 1.25rem) !important;
     line-height: 1.55;
     letter-spacing: -0.005em;
     color: var(--text);
@@ -218,21 +218,21 @@
 
     @media (max-width: 1024px) {
       margin-top: 0.75rem;
-      font-size: clamp(0.75rem, 1.8vw, 0.95rem);
+      font-size: clamp(0.75rem, 1.8vw, 1.25rem) !important;
       line-height: 1.5;
       max-width: 100%;
     }
 
     @media (max-width: 768px) {
       margin-top: 0.6rem;
-      font-size: clamp(0.65rem, 1.6vw, 0.85rem);
+      font-size: clamp(0.65rem, 1.6vw, 1.25rem) !important;
       padding: 0.5rem 0 0.25rem 0;
       line-height: 1.45;
     }
 
     @media (max-width: 480px) {
       margin-top: 0.5rem;
-      font-size: clamp(0.6rem, 1.5vw, 0.75rem);
+      font-size: clamp(0.6rem, 1.5vw, 1.25rem) !important;
       line-height: 1.4;
     }
   }
