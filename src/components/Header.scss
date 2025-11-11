@@ -1,0 +1,140 @@
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: transparent;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  &__container {
+    // margin: 0 auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    max-width: 100%;
+    // max-width: 80rem; // max-w-7xl equivalent
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0; // py-4 equivalent
+    
+    @media (min-width: 640px) {
+      padding: 1.2rem 0; // sm:py-6 equivalent
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    transform: scale(1); // Keep full size on all devices
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+    
+    &:active {
+      transform: scale(0.98);
+    }
+    
+    &-img {
+      width: 156px;
+      height: 51px;
+      object-fit: contain;
+      display: block;
+    }
+    
+    @media (max-width: 768px) {
+      transform: scale(0.85);
+      
+      &:hover {
+        transform: scale(0.9);
+      }
+      
+      &:active {
+        transform: scale(0.83);
+      }
+      
+      .header__logo-img {
+        width: 130px;
+        height: 42px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      transform: scale(0.75);
+      
+      &:hover {
+        transform: scale(0.8);
+      }
+      
+      &:active {
+        transform: scale(0.73);
+      }
+      
+      .header__logo-img {
+        width: 110px;
+        height: 36px;
+      }
+    }
+  }
+
+  &--white {
+    .header__logo {
+      // Logo is white in About Us hero section via SVG
+    }
+  }
+
+  &__button {
+    border-radius: 9999px; // rounded-full equivalent
+    padding: 0.5rem 1rem; // px-4 equivalent
+    font-size: 0.875rem; // text-sm equivalent
+    background: transparent;
+    border: 1px solid #2B7FED;
+    color: #2B7FED;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    white-space: nowrap;
+    
+    @media (min-width: 640px) {
+      padding: 0.5rem 1.5rem; // sm:px-6 equivalent
+      font-size: 1rem; // sm:text-base equivalent
+    }
+
+    @media (max-width: 480px) {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.8rem;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1); // hover:bg-white/10 equivalent
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(43, 127, 237, 0.2);
+    }
+
+    &--white {
+      border: 1px solid #ffffff !important;
+      color: #ffffff !important;
+      background: transparent !important;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-color: #ffffff !important;
+        color: #ffffff !important;
+      }
+      
+      &:focus {
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2) !important;
+      }
+    }
+  }
+}

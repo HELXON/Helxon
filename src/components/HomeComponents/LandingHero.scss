@@ -1,0 +1,255 @@
+.landing-hero {
+  /* ---------- Theme Tokens ---------- */
+  --brand-600: #2B7FED;     /* primary blue */
+  --brand-700: #0098fe;
+  --cyan-500:  #5DADE2;
+  --orange-500:#FDB022;
+  --pink-500:  #E94B8B;
+
+  --text-strong: #0F172A;   /* slate-900 */
+  --text:        #334155;   /* slate-700 */
+  --text-soft:   #64748B;   /* slate-500 */
+
+  --shadow-soft: 0 1px 0 rgba(15, 23, 42, 0.06), 0 8px 30px rgba(15, 23, 42, 0.06);
+
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  background: #fff;
+  overflow: hidden;
+  padding-left: 5%;
+  padding-right: 5%;
+  pointer-events: auto;
+
+  @media (max-width: 1024px) {
+    height: auto;
+    min-height: 500px;
+    overflow: hidden;
+  }
+
+  @media (max-width: 768px) {
+    min-height: 450px;
+  }
+
+  /* video layer */
+  &__background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: auto;
+
+    @media (max-width: 1024px) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  /* content layer */
+  &__container {
+    margin: 0 auto;
+    max-width: 80rem;
+    // padding-inline: 1rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: clamp(2rem, 4vw, 4rem);
+    position: relative;
+    z-index: 10;
+    pointer-events: none;
+  &__content {
+    /* wider content area for larger text */
+    max-width: 50rem;
+    position: relative;
+    pointer-events: none;
+
+    // @media (min-width: 640px) { padding-inline: 1.5rem; }
+
+    @media (max-width: 1024px) {
+      position: relative;
+      height: 100%;
+      min-height: 500px;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      align-items: center;
+      justify-content: flex-start;
+      z-index: 2;
+    }
+
+    @media (max-width: 768px) {
+      min-height: 450px;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      padding-inline: 1.25rem;
+    }
+
+    @media (max-width: 480px) {
+      padding-inline: 1rem;
+    }
+  }
+
+  &__content {
+    /* wider content area for larger text */
+    max-width: 50rem;
+    position: relative;
+
+    @media (max-width: 1024px) {
+      max-width: 55%;
+      width: 55%;
+    }
+
+    @media (max-width: 768px) {
+      max-width: 60%;
+      width: 60%;
+    }
+
+    @media (max-width: 480px) {
+      max-width: 60%;
+      width: 60%;
+    }
+  }
+
+  /* ---------- Typography ---------- */
+  /* Use Space Grotesk if already bundled; Inter as body fallback fits your theme well. */
+  &__title {
+    font-family: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0;
+
+    /* Fluid size for big, calm hero; adapts from mobile to large screens */
+    font-size: clamp(2rem, 4.2vw, 4rem);
+
+    /* soft lift so text sits above bright video frames */
+    text-shadow: 0 0.5px 0 rgba(255,255,255,0.6);
+    pointer-events: none;
+  }
+  @media (min-width: 640px) { 
+    &__title {
+      font-size: clamp(4rem, 4.2vw, 6rem);
+    }
+  }
+
+  .word {
+    display: inline-block;
+    will-change: transform, opacity, filter;
+  }
+
+  .word--primary    { 
+    color: #A6A6A6;
+    font-size: clamp(14.5rem, 8vw, 8rem);
+    font-weight: 500;
+    line-height: 0.9;
+
+    @media (max-width: 1024px) {
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      line-height: 0.85;
+    }
+
+    @media (max-width: 768px) {
+      font-size: clamp(4rem, 7vw, 5.5rem);
+    }
+
+    @media (max-width: 480px) {
+      font-size: clamp(4rem, 6.5vw, 4.75rem);
+    }
+  }
+  .word--muted      { color: var(--text-soft); font-weight: 500; }
+
+  /* Blue gradient for "At The Speed Of Scale" */
+  .word--gradient-cool {
+    color: var(--brand-700);
+    font-size: clamp(2.5rem, 4vw, 5rem);
+    font-weight: 600;
+    text-shadow: none;
+    line-height: 1;
+
+    @media (max-width: 1024px) {
+      font-size: clamp(1.25rem, 3.5vw, 2rem);
+      line-height: 1.25;
+    }
+
+    @media (max-width: 768px) {
+      font-size: clamp(1rem, 3vw, 1.65rem);
+    }
+
+    @media (max-width: 480px) {
+      font-size: clamp(0.85rem, 2.8vw, 1.35rem);
+    }
+  }
+
+  /* Orange → Pink gradient for “scale” */
+  .word--gradient-warm {
+    background: linear-gradient(90deg, var(--orange-500) 0%, var(--pink-500) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+  }
+
+  &__description {
+    margin-top: clamp(0.9rem, 1.5vw, 1.25rem);
+    max-width: 60ch;                /* ideal reading line length */
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    font-weight: 450;
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    line-height: 1.55;
+    letter-spacing: -0.005em;
+    color: var(--text);
+    text-wrap: pretty;
+
+    /* slight card-like lift vs video for readability */
+    padding: 0.75rem 0.25rem 0.25rem 0;
+    filter: drop-shadow(var(--shadow-soft));
+    pointer-events: none;
+
+    @media (max-width: 1024px) {
+      margin-top: 0.75rem;
+      font-size: clamp(0.75rem, 1.8vw, 0.95rem);
+      line-height: 1.5;
+      max-width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      margin-top: 0.6rem;
+      font-size: clamp(0.65rem, 1.6vw, 0.85rem);
+      padding: 0.5rem 0 0.25rem 0;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 480px) {
+      margin-top: 0.5rem;
+      font-size: clamp(0.6rem, 1.5vw, 0.75rem);
+      line-height: 1.4;
+    }
+  }
+
+  /* soft radial wash to ensure legibility in the lower-left */
+  &__overlay {
+    position: absolute;
+    pointer-events: none;
+    inset: 0;
+    background:
+      radial-gradient(1200px 500px at 18% 82%,
+        rgba(255,255,255,0.85) 0%,
+        rgba(255,255,255,0.55) 45%,
+        rgba(255,255,255,0.00) 70%);
+
+    @media (max-width: 1024px) {
+      display: none; // Hide overlay on mobile/tablet since we don't need it with new layout
+    }
+  }
+}
+}

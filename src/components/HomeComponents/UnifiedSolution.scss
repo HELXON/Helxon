@@ -1,0 +1,617 @@
+/* put this <link> in index.html <head> if not already:
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400&display=swap"
+  rel="stylesheet"
+/>
+*/
+
+.unified-solution {
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  min-height: 80vh;
+  padding-top: clamp(2rem, 6vw, 6rem);
+
+  &__container {
+    width: 100%;
+    max-width: 80rem; // Match header container max-width
+    margin: 0 auto;
+    padding: 0 1rem; // Match header container padding
+    text-align: center;
+    position: relative;
+
+    @media (min-width: 640px) {
+      padding: 0 1.5rem; // Match header container padding on larger screens
+    }
+  }
+
+  /* -----------------
+     HEADER (match slide)
+     ----------------- */
+  &__header {
+    margin-bottom: 3rem;
+  }
+
+  /* Big navy title like your slide */
+  &__title {
+    font-family: 'Poppins', 'Inter', ui-sans-serif, system-ui, -apple-system,
+      Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);  /* Responsive from mobile to desktop */
+    font-weight: 500;
+    line-height: 1.1;
+    color: #1a2348;
+    margin: 0 0 0.5rem 0;
+  }
+
+  /* Subtitle below in same dark tone */
+  &__subtitle {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI,
+      Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 2rem);  /* Responsive from mobile to desktop */
+    font-weight: 400;
+    line-height: 1.25;
+    color: #1a2348;
+    margin: 0;
+  }
+
+  /* -----------------
+     SPLINE WRAPPER - Full viewport width with gradient blend
+     ----------------- */
+  &__spline-wrapper {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: #ffffff;
+    overflow: hidden;
+    padding: 0 0 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    // Top gradient overlay - stronger fade to blend with white section above
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 20%;
+      background: linear-gradient(
+        to bottom,
+        #ffffff 0%,
+        #ffffff 15%,
+        #ffffff 25%,
+        rgba(255, 255, 255, 0.98) 35%,
+        rgba(255, 255, 255, 0.92) 45%,
+        rgba(255, 255, 255, 0.8) 55%,
+        rgba(255, 255, 255, 0.6) 65%,
+        rgba(255, 255, 255, 0.35) 75%,
+        rgba(255, 255, 255, 0.15) 85%,
+        rgba(255, 255, 255, 0.05) 92%,
+        transparent 100%
+      );
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    // Bottom gradient overlay - lighter fade
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 25%;
+      background: linear-gradient(
+        to top,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0.9) 25%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0.2) 75%,
+        transparent 100%
+      );
+      pointer-events: none;
+      z-index: 2;
+    }
+    
+    // Blend with white background and remove box appearance
+    canvas {
+      width: 100% !important;
+      height: auto !important;
+      min-height: 400px;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+      background: transparent !important;
+      background-color: transparent !important;
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+      position: relative;
+      z-index: 0;
+      // Add subtle blend mode for smoother transition
+      mix-blend-mode: normal;
+    }
+
+    // Target Spline container div if it exists
+    > div {
+      width: 100%;
+      background: transparent !important;
+      position: relative;
+      z-index: 0;
+      
+      canvas {
+        background: transparent !important;
+        background-color: transparent !important;
+      }
+    }
+  }
+
+  /* -----------------
+     MAIN CONTENT SECTION
+     ----------------- */
+  &__content {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* -----------------
+     MAIN CONTENT (Center)
+     ----------------- */
+  &__main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 900px;
+  }
+
+  /* Branding */
+  &__branding {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__branding-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: fit-content;
+  }
+
+  &__logo {
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  &__by-line {
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #6b7280;
+    margin-top: -1rem;
+    text-align: right;
+    margin-right: 15px;
+  }
+
+  /* Main Headline */
+  &__headline {
+    color: #1a2348;
+    font-family: "Poppins", "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.1;
+    color: #1a2348;
+    margin: 0 0 0.5rem 0;
+  }
+
+  /* Sub-headline */
+  &__sub-headline {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0;
+
+    p {
+      color: #1a2348;
+    font-family: "Poppins", "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-size: clamp(2rem, 3vw, 2rem);
+    font-weight: 500;
+    line-height: 1.1;
+    color: #1a2348;
+    margin: 0 0 0.5rem 0;
+    }
+  }
+
+  /* Description */
+  &__description {
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    font-weight: 400;
+    line-height: 1.25;
+    color: #1a2348;
+    margin: 0;
+  }
+
+  /* Learn More Button */
+  &__learn-more-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.875rem 2rem;
+    background: #2B7FED;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.5rem;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+
+    svg {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      background: #1d6fd8;
+      box-shadow: 0 10px 15px -3px rgba(43, 127, 237, 0.3), 0 4px 6px -4px rgba(43, 127, 237, 0.2);
+      transform: translateY(-2px);
+
+      svg {
+        transform: translateX(4px);
+      }
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  /* -----------------
+     SEAMLESS INTEGRATION SECTION
+     ----------------- */
+  &__integration {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__integration-icon {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > div {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__integration-title {
+    color: #1a2348;
+    font-family: "Poppins", "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1.1;
+    color: #1a2348;
+    margin: 0 0 0.5rem 0;
+  }
+
+  &__integration-description {
+    font-family: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    font-weight: 400;
+    line-height: 1.25;
+    color: #1a2348;
+    margin: 0;
+  }
+
+  /* -----------------
+     BOUNCE CARDS SECTION
+     ----------------- */
+  &__bounce-cards {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  &__bounce-cards-component {
+    margin: 0 auto;
+  }
+}
+
+/* ------------- RESPONSIVE ------------- */
+
+/* Tablet landscape and smaller desktops */
+@media (max-width: 1024px) {
+  .unified-solution__title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+  }
+  .unified-solution__subtitle {
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+  }
+
+  .unified-solution__spline-wrapper {
+    canvas {
+      min-height: 350px;
+    }
+  }
+
+  .unified-solution__content {
+    padding: 3rem 1.5rem;
+  }
+
+  .unified-solution__integration {
+    padding: 3rem 1.5rem;
+  }
+
+  .unified-solution__bounce-cards {
+    padding: 3rem 1.5rem;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .unified-solution {
+    padding: 3rem 0 0;
+  }
+
+  .unified-solution__title {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+  .unified-solution__subtitle {
+    font-size: clamp(1.125rem, 3.5vw, 1.5rem);
+  }
+
+  .unified-solution__spline-wrapper {
+    padding: 1.5rem 0 4rem;
+
+    canvas {
+      min-height: 300px;
+    }
+  }
+
+  .unified-solution__content {
+    padding: 3rem 1.5rem;
+  }
+
+  .unified-solution__headline {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+  }
+
+  .unified-solution__sub-headline p {
+    font-size: clamp(1.125rem, 3vw, 1.5rem);
+  }
+
+  .unified-solution__description {
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+  }
+
+  .unified-solution__integration {
+    padding: 3rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .unified-solution__integration-icon {
+    width: 150px;
+    height: 150px;
+  }
+
+  .unified-solution__integration-title {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+  }
+
+  .unified-solution__bounce-cards {
+    padding: 3rem 1.5rem;
+    overflow-x: auto;
+  }
+
+  .unified-solution__bounce-cards-component {
+    transform: scale(0.85);
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .unified-solution {
+    padding: 2rem 0 0;
+    min-height: 70vh;
+  }
+
+  .unified-solution__title {
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+  }
+  .unified-solution__subtitle {
+    font-size: clamp(1rem, 4vw, 1.25rem);
+  }
+
+  .unified-solution__spline-wrapper {
+    padding: 1rem 0 3rem;
+
+    canvas {
+      min-height: 250px;
+    }
+  }
+
+  .unified-solution__content {
+    padding: 2rem 1rem;
+  }
+
+  .unified-solution__branding {
+    margin-bottom: 0.25rem;
+  }
+
+  .unified-solution__logo {
+    height: 32px;
+  }
+
+  .unified-solution__by-line {
+    font-size: 0.75rem;
+    margin-top: -4px;
+  }
+
+  .unified-solution__headline {
+    font-size: clamp(1.75rem, 7vw, 2.25rem);
+  }
+
+  .unified-solution__sub-headline {
+    gap: 0.25rem;
+    margin: 0.25rem 0;
+
+    p {
+      font-size: clamp(1rem, 4vw, 1.25rem);
+    }
+  }
+
+  .unified-solution__description {
+    font-size: clamp(0.875rem, 3vw, 1rem);
+    margin: 0.25rem 0 0.75rem;
+  }
+
+  .unified-solution__learn-more-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .unified-solution__integration {
+    padding: 2rem 1rem;
+    gap: 1.25rem;
+  }
+
+  .unified-solution__integration-icon {
+    width: 120px;
+    height: 120px;
+  }
+
+  .unified-solution__integration-title {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .unified-solution__integration-description {
+    font-size: clamp(0.875rem, 3vw, 1rem);
+  }
+
+  .unified-solution__bounce-cards {
+    padding: 2rem 1rem;
+    overflow-x: auto;
+  }
+
+  .unified-solution__bounce-cards-component {
+    transform: scale(0.75);
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 360px) {
+  .unified-solution__title {
+    font-size: 1.5rem;
+  }
+  .unified-solution__subtitle {
+    font-size: 0.95rem;
+  }
+
+  .unified-solution__spline-wrapper {
+    canvas {
+      min-height: 200px;
+    }
+  }
+
+  .unified-solution__content {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .unified-solution__branding {
+    align-items: center;
+  }
+
+  .unified-solution__by-line {
+    align-self: flex-end;
+  }
+
+  .unified-solution__logo {
+    height: 28px;
+  }
+
+  .unified-solution__headline {
+    font-size: 1.5rem;
+  }
+
+  .unified-solution__sub-headline p {
+    font-size: 1rem;
+  }
+
+  .unified-solution__description {
+    font-size: 0.875rem;
+  }
+
+  .unified-solution__learn-more-btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  .unified-solution__integration-icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .unified-solution__integration-title {
+    font-size: 1.25rem;
+  }
+
+  .unified-solution__integration-description {
+    font-size: 0.85rem;
+  }
+
+  .unified-solution__bounce-cards {
+    padding: 1.5rem 0.75rem;
+    overflow-x: auto;
+  }
+
+  .unified-solution__bounce-cards-component {
+    transform: scale(0.65);
+  }
+}

@@ -1,0 +1,11 @@
+export default function NotFoundPage() {
+  return (
+    <section className="flex min-h-[60vh] flex-col items-center justify-center px-6 text-center">
+      <h1 className="text-4xl font-semibold text-slate-900">Page not found</h1>
+      <p className="mt-4 max-w-xl text-lg text-slate-600">
+        This route does not exist yet. Please check the URL or head back home.
+      </p>
+    </section>
+  );
+}
+
