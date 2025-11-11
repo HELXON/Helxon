@@ -5,11 +5,11 @@ import { SecurityToolsIntegration } from '@/components/PlatformComponents/Securi
 import { IntegrationBenefits } from '@/components/PlatformComponents/IntegrationBenefits';
 import { WhyChooseVorxoc } from '@/components/PlatformComponents/WhyChooseVorxoc';
 import { ReadyToSecure } from '@/components/PlatformComponents/ReadyToSecure';
-import './PlatformPage.scss';
+import './VorxocPage.scss';
 
-export default function PlatformPage() {
+export default function VorxocPage() {
   return (
-    <div className="platform-page">
+    <div className="vorxoc-page">
       <VorxocHero />
       <VorxocPartners />
       <VorxocOverview />
@@ -20,3 +20,4 @@ export default function PlatformPage() {
     </div>
   );
 }
+

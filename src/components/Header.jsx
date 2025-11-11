@@ -15,7 +15,7 @@ export function Header() {
 
   const [isInHeroSection, setIsInHeroSection] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const isAboutUsPage = pathname === '/about-us' || pathname === '/contact-us' || pathname === '/faq' || pathname === '/platform';
+  const isAboutUsPage = pathname === '/about-us' || pathname === '/contact-us' || pathname === '/faq' || pathname === '/vorxoc';
 
   useEffect(() => {
     if (!isAboutUsPage) {

@@ -50,9 +50,9 @@ export function BottomNavBar() {
             styles["bottom-nav__item"],
             styles["bottom-nav__item--link"],
           )}
-          onClick={() => handleNavigate("/platform")}
+          onClick={() => handleNavigate("/vorxoc")}
         >
-          <span>Platform</span>
+          <span>Vorxoc</span>
         </button>
 
         <button
