@@ -5,6 +5,30 @@ import { AboutUsPartners } from '@/components/AboutUsComponents/AboutUsPartners'
 import { AboutUsCTA } from '@/components/AboutUsComponents/AboutUsCTA';
 import './AboutUsPage.scss';
 
+export const metadata = {
+  title: 'About Helxon - Leading Cybersecurity & SOC-as-a-Service Provider',
+  description: 'Learn about Helxon\'s mission to deliver enterprise-grade cybersecurity solutions through 24/7 SOC-as-a-Service, Microsoft-powered threat detection, and expert security operations.',
+  keywords: 'about Helxon, cybersecurity company, SOC provider, security operations, Microsoft partner, threat intelligence, security team',
+  authors: [{ name: 'Helxon' }],
+  openGraph: {
+    title: 'About Helxon - Leading Cybersecurity & SOC-as-a-Service Provider',
+    description: 'Learn about Helxon\'s mission to deliver enterprise-grade cybersecurity solutions through 24/7 SOC-as-a-Service and Microsoft-powered threat detection.',
+    url: 'https://helxon.com/about-us',
+    siteName: 'Helxon',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Helxon - Leading Cybersecurity & SOC-as-a-Service Provider',
+    description: 'Learn about Helxon\'s mission to deliver enterprise-grade cybersecurity solutions through 24/7 SOC-as-a-Service and Microsoft-powered threat detection.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
 export default function AboutUsPage() {
   return (
     <div className="about-us-page">

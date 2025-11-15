@@ -16,6 +16,59 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const metadata = {
+  metadataBase: new URL('https://helxon.com'),
+  title: {
+    default: 'Helxon - Enterprise Cybersecurity & SOC-as-a-Service Solutions',
+    template: '%s | Helxon'
+  },
+  description: 'Helxon provides 24/7 SOC-as-a-Service, threat detection, and managed security operations powered by Microsoft Sentinel and Defender.',
+  keywords: 'cybersecurity, SOC-as-a-Service, threat detection, managed security, Microsoft Sentinel, Azure security, VorXOC',
+  authors: [{ name: 'Helxon' }],
+  creator: 'Helxon',
+  publisher: 'Helxon',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://helxon.com',
+    siteName: 'Helxon',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Helxon - Enterprise Cybersecurity Solutions',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@helxon',
+    creator: '@helxon',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: '',
+    yandex: '',
+    bing: '',
+  },
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
