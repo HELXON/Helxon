@@ -12,7 +12,6 @@
   justify-content: center;
   position: relative;
   min-height: 80vh;
-  padding-top: clamp(2rem, 6vw, 6rem);
 
   &__container {
     width: 100%;
@@ -66,9 +65,9 @@
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    background: #ffffff;
+    background: transparent;
     overflow: hidden;
-    padding: 0 0 6rem;
+    min-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -118,7 +117,26 @@
       pointer-events: none;
       z-index: 2;
     }
-    
+  }
+
+  /* -----------------
+     BACKGROUND VIDEO - Behind Spline
+     ----------------- */
+  &__background-video {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* -----------------
+     SPLINE WRAPPER CANVAS STYLES
+     ----------------- */
+  .unified-solution__spline-wrapper {
     // Blend with white background and remove box appearance
     canvas {
       width: 100% !important;
@@ -133,7 +151,7 @@
       outline: none !important;
       box-shadow: none !important;
       position: relative;
-      z-index: 0;
+      z-index: 1;
       // Add subtle blend mode for smoother transition
       mix-blend-mode: normal;
     }
@@ -143,7 +161,7 @@
       width: 100%;
       background: transparent !important;
       position: relative;
-      z-index: 0;
+      z-index: 1;
       
       canvas {
         background: transparent !important;

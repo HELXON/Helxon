@@ -36,6 +36,15 @@ export function UnifiedSolution() {
   return (
     <section className="unified-solution">
       <div className="unified-solution__spline-wrapper">
+        <video
+          className="unified-solution__background-video"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/robotBackground.mp4" type="video/mp4" />
+        </video>
         <Spline scene="robotScene.splinecode" wasmPath="/" />
       </div>
 
