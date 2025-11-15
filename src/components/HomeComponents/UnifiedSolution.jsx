@@ -3,20 +3,23 @@
 /* eslint-disable @next/next/no-img-element */
 
 import React from "react";
+import { useRouter } from "next/navigation";
 import Spline from "@splinetool/react-spline";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import vorxocGreenLogo from "@/app/assets/vorxocGreen.svg";
-// import BounceCards from "./BounceCards";
+import BounceCards from "./BounceCards";
 
-import CrowdStrikeLogo from "@/app/assets/EndpointLogos/CrowdStrike_logo.svg";
-import ESETLogo from "@/app/assets/EndpointLogos/ESET_logo.svg";
-import KasperskyLogo from "@/app/assets/EndpointLogos/Kaspersky_logo.svg";
-import McAfeeLogo from "@/app/assets/EndpointLogos/McAfee_logo.svg";
-import SentinelOneLogo from "@/app/assets/EndpointLogos/SentinelOne_logo.svg";
+import CrowdStrikeLogo from "@/app/assets/bounceCardsImages/1.jpg";
+import ESETLogo from "@/app/assets/bounceCardsImages/2.jpg";
+import KasperskyLogo from "@/app/assets/bounceCardsImages/3.jpg";
+import McAfeeLogo from "@/app/assets/bounceCardsImages/4.jpg";
+import SentinelOneLogo from "@/app/assets/bounceCardsImages/5.jpg";
 
 import "./UnifiedSolution.scss";
 
 export function UnifiedSolution() {
+  const router = useRouter();
+
   const endpointLogos = [
     CrowdStrikeLogo,
     ESETLogo,
@@ -32,6 +35,10 @@ export function UnifiedSolution() {
     "rotate(5deg) translate(70px)",
     "rotate(-5deg) translate(150px)",
   ];
+
+  const handleLearnMore = () => {
+    router.push("/vorxoc");
+  };
 
   return (
     <section className="unified-solution">
@@ -74,7 +81,10 @@ export function UnifiedSolution() {
             response from one intelligent platform.
           </p>
 
-          <button className="unified-solution__learn-more-btn">
+          <button 
+            className="unified-solution__learn-more-btn"
+            onClick={handleLearnMore}
+          >
             <span>Learn More</span>
             <svg
               width="20"
@@ -114,7 +124,7 @@ export function UnifiedSolution() {
         </p>
       </div>
 
-      {/* <div className="unified-solution__bounce-cards">
+      <div className="unified-solution__bounce-cards">
         <BounceCards
           className="unified-solution__bounce-cards-component"
           images={endpointLogos}
@@ -126,7 +136,7 @@ export function UnifiedSolution() {
           transformStyles={transformStyles}
           enableHover={true}
         />
-      </div> */}
+      </div>
     </section>
   );
 }
