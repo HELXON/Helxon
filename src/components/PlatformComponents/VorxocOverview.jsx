@@ -1,15 +1,21 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Check, ArrowRight, PlayCircle } from 'lucide-react';
 import dashboardImage from '../../app/assets/VorxocPage.jpg';
+import { GetStartedModal } from '../GetStartedModal';
 import './VorxocOverview.scss';
 
 export function VorxocOverview() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleWatchDemo = () => {
-    // Navigate to demo video or open modal
-    console.log('Watch Demo clicked');
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
 
   const features = [
@@ -138,6 +144,9 @@ export function VorxocOverview() {
           </motion.button>
         </motion.div>
       </div>
+
+      {/* Get Started Modal */}
+      <GetStartedModal isOpen={isModalOpen} onClose={handleCloseModal} />
     </section>
   );
 }

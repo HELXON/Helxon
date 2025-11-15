@@ -6,6 +6,36 @@ import { IntegrationBenefits } from '@/components/PlatformComponents/Integration
 import { WhyChooseVorxoc } from '@/components/PlatformComponents/WhyChooseVorxoc';
 import { ReadyToSecure } from '@/components/PlatformComponents/ReadyToSecure';
 import './VorxocPage.scss';
+import helxonImage from '@/app/assets/HelxonLogo.png';
+
+export const metadata = {
+  title: 'VorXOC Platform - Unified Security Operations Dashboard',
+  description: 'VorXOC is Helxon\'s proprietary unified security platform integrating Microsoft Sentinel, Defender, and multi-cloud environments. Get real-time threat visibility, automated incident response, and seamless security orchestration.',
+  keywords: ['VorXOC platform', 'unified security dashboard', 'Microsoft Sentinel integration', 'security orchestration', 'SIEM platform', 'threat visibility', 'incident response automation', 'multi-cloud security'],
+  openGraph: {
+    title: 'VorXOC Platform - Unified Security Operations Dashboard | Helxon',
+    description: 'VorXOC is Helxon\'s proprietary unified security platform integrating Microsoft Sentinel, Defender, and multi-cloud environments.',
+    url: 'https://helxon.com/vorxoc',
+    type: 'website',
+    images: [
+      {
+        url: helxonImage.src,
+        width: 1200,
+        height: 630,
+        alt: 'VorXOC Security Platform',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'VorXOC Platform - Unified Security Operations Dashboard | Helxon',
+    description: 'VorXOC is Helxon\'s proprietary unified security platform integrating Microsoft Sentinel, Defender, and multi-cloud environments.',
+    images: [helxonImage.src],
+  },
+  alternates: {
+    canonical: 'https://helxon.com/vorxoc',
+  },
+};
 
 export const metadata = {
   title: 'VorXOC Platform - Unified Security Operations & Threat Management',

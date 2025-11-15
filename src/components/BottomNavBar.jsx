@@ -106,6 +106,13 @@ export function BottomNavBar() {
               </button>
               <button
                 type="button"
+                onClick={() => handleNavigate("/blogs")}
+                className={styles["bottom-nav__dropdown-item"]}
+              >
+                Blogs
+              </button>
+              <button
+                type="button"
                 onClick={() => handleNavigate("/faq")}
                 className={styles["bottom-nav__dropdown-item"]}
               >

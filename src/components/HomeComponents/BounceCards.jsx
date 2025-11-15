@@ -1,8 +1,7 @@
 "use client";
 
-/* eslint-disable @next/next/no-img-element */
-
 import React, { useEffect, useRef } from "react";
+import Image from "next/image";
 import { gsap } from "gsap";
 import "./BounceCards.scss";
 
@@ -142,7 +141,14 @@ export default function BounceCards({
           onMouseEnter={() => pushSiblings(idx)}
           onMouseLeave={resetSiblings}
         >
-          <img className="image" src={src} alt={`card-${idx}`} />
+          <Image
+            className="image"
+            src={src}
+            alt={`card-${idx}`}
+            fill
+            sizes="(max-width: 768px) 100vw, 300px"
+            style={{ objectFit: "cover" }}
+          />
         </div>
       ))}
     </div>

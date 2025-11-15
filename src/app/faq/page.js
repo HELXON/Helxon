@@ -6,6 +6,7 @@ import Image from 'next/image';
 import HeroLogo from '@/app/assets/AboutUs_img/Asset 4 (1) 1.png';
 import { ChevronDown } from 'lucide-react';
 import { AboutUsCTA } from '@/components/AboutUsComponents/AboutUsCTA';
+import { FAQStructuredData } from '@/components/FAQStructuredData';
 import './FAQPage.scss';
 
 export default function FAQPage() {
@@ -80,6 +81,9 @@ export default function FAQPage() {
 
   return (
     <div className="faq-page">
+      {/* FAQ Structured Data for SEO */}
+      <FAQStructuredData faqs={faqs} />
+      
       {/* Hero Section */}
       <section className="faq-page__hero">
         <div className="faq-page__hero-container">

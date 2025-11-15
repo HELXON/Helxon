@@ -15,7 +15,7 @@ export function Header() {
 
   const [isInHeroSection, setIsInHeroSection] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const isAboutUsPage = pathname === '/about-us' || pathname === '/contact-us' || pathname === '/faq' || pathname === '/vorxoc';
+  const isAboutUsPage = pathname === '/about-us' || pathname === '/contact-us' || pathname === '/faq' || pathname === '/vorxoc' || pathname === '/blogs';
 
   useEffect(() => {
     if (!isAboutUsPage) {
@@ -24,7 +24,7 @@ export function Header() {
     }
 
     const handleScroll = () => {
-      const heroSection = document.querySelector('.about-us-hero') || document.querySelector('.contact-us-page__hero') || document.querySelector('.faq-page__hero') || document.querySelector('.vorxoc-hero__hero-container');
+      const heroSection = document.querySelector('.about-us-hero') || document.querySelector('.contact-us-page__hero') || document.querySelector('.faq-page__hero') || document.querySelector('.vorxoc-hero__hero-container') || document.querySelector('.blogs-page__hero');
       if (heroSection) {
         const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
         const scrollPosition = window.scrollY + 100; // Account for header height

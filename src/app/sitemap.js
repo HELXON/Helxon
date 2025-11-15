@@ -21,6 +21,12 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/blogs`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/contact-us`,
       lastModified: new Date(),
       changeFrequency: 'monthly',

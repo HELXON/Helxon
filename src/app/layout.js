@@ -5,6 +5,8 @@ import { Header } from "@/components/Header";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { BottomNavBar } from "@/components/BottomNavBar";
 import { Footer } from "@/components/Footer";
+import { StructuredData } from "@/components/StructuredData";
+import helxonImage from '@/app/assets/HelxonLogo.png';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -73,6 +75,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Structured Data for SEO */}
+        <StructuredData />
+        
         {/* Google Tag Manager */}
         <Script
           id="google-tag-manager"
