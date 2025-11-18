@@ -11,6 +11,25 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import './BlogsPage.scss';
 
+const baseBlogCollectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['WebPage', 'CollectionPage', 'Blog'],
+  name: 'Helxon Cybersecurity Blog',
+  url: 'https://helxon.com/blogs',
+  description:
+    'Cybersecurity insights, threat intelligence, and SOC best practices from Helxon’s security experts.',
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Helxon',
+    url: 'https://helxon.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Helxon',
+    url: 'https://helxon.com',
+  },
+};
+
 export default function BlogsPage() {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -86,8 +105,26 @@ export default function BlogsPage() {
     },
   };
 
+  const blogCollectionSchema =
+    blogs && blogs.length > 0
+      ? {
+          ...baseBlogCollectionSchema,
+          hasPart: blogs.map((blog) => ({
+            '@type': 'BlogPosting',
+            headline: blog.fields?.title,
+            description: blog.fields?.excerpt,
+            datePublished: blog.sys?.createdAt,
+            dateModified: blog.sys?.updatedAt || blog.sys?.createdAt,
+          })),
+        }
+      : baseBlogCollectionSchema;
+
   return (
     <div className="blogs-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogCollectionSchema) }}
+      />
       {/* Hero Section */}
       <section className="blogs-page__hero">
         <div className="blogs-page__hero-container">

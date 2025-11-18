@@ -1,5 +1,4 @@
 import { HomePageContent } from "@/components/HomePageContent";
-import helxonImage from '@/app/assets/HelxonLogo.png';
 
 export const metadata = {
   title: 'Home',
@@ -12,10 +11,10 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: helxonImage.src,
-        width: 1200,
-        height: 630,
-        alt: 'Helxon Cybersecurity Solutions',
+        url: '/favicon.ico',
+        width: 64,
+        height: 64,
+        alt: 'Helxon logo',
       },
     ],
   },
@@ -23,7 +22,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Helxon | Enterprise Cybersecurity & SOC-as-a-Service Solutions',
     description: 'Enterprise-grade SOC-as-a-Service with 24/7 threat monitoring and Microsoft-powered security solutions.',
-    images: [helxonImage.src],
+    images: ['/favicon.ico'],
   },
   alternates: {
     canonical: 'https://helxon.com',

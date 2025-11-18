@@ -8,7 +8,7 @@ export function StructuredData() {
     '@type': 'Organization',
     name: 'Helxon',
     url: 'https://helxon.com',
-    logo: 'https://helxon.com/helxon-logo.png',
+    logo: 'https://helxon.com/favicon.ico',
     description: 'Helxon delivers 24/7 SOC-as-a-Service, MDR, threat monitoring, detection, and incident response. Protect your business with enterprise-grade cybersecurity at scale.',
     contactPoint: {
       '@type': 'ContactPoint',
@@ -49,7 +49,7 @@ export function StructuredData() {
     '@type': 'LocalBusiness',
     '@id': 'https://helxon.com',
     name: 'Helxon',
-    image: 'https://helxon.com/helxon-logo.png',
+    image: 'https://helxon.com/favicon.ico',
     url: 'https://helxon.com',
     telephone: '+1-604-499-5973',
     email: 'contact@helxon.com',
