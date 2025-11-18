@@ -1,20 +1,37 @@
 export const metadata = {
-  title: 'Contact Helxon - Get Expert Cybersecurity Support',
-  description: 'Contact Helxon for enterprise cybersecurity solutions, SOC-as-a-Service inquiries, VorXOC platform demos, and security consultation. Available Mon-Fri 9 AM - 6 PM PST.',
-  keywords: 'contact Helxon, cybersecurity support, SOC consultation, security inquiry, VorXOC demo, customer support',
-  authors: [{ name: 'Helxon' }],
+  title: 'Contact Us - Get in Touch with Our Security Experts',
+  description:
+    'Contact Helxon for enterprise cybersecurity solutions. Speak with our security experts about SOC-as-a-Service, threat monitoring, and how we can protect your organization. Call +1(604) 499 5973 or email contact@helxon.com',
+  keywords: [
+    'contact Helxon',
+    'cybersecurity consultation',
+    'security experts',
+    'SOC inquiry',
+    'enterprise security contact',
+    'threat protection consultation',
+  ],
   openGraph: {
-    title: 'Contact Helxon - Get Expert Cybersecurity Support',
-    description: 'Contact Helxon for enterprise cybersecurity solutions, SOC-as-a-Service inquiries, and VorXOC platform demos.',
+    title: 'Contact Us - Get in Touch with Our Security Experts | Helxon',
+    description:
+      'Contact Helxon for enterprise cybersecurity solutions. Speak with our security experts about SOC-as-a-Service and threat monitoring.',
     url: 'https://helxon.com/contact-us',
     siteName: 'Helxon',
     type: 'website',
-    locale: 'en_US',
+    images: [
+      {
+        url: '/favicon.ico',
+        width: 64,
+        height: 64,
+        alt: 'Helxon logo',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact Helxon - Get Expert Cybersecurity Support',
-    description: 'Contact Helxon for enterprise cybersecurity solutions, SOC-as-a-Service inquiries, and VorXOC platform demos.',
+    title: 'Contact Us - Get in Touch with Our Security Experts | Helxon',
+    description:
+      'Contact Helxon for enterprise cybersecurity solutions. Speak with our security experts about SOC-as-a-Service and threat monitoring.',
+    images: ['/favicon.ico'],
   },
   robots: {
     index: true,

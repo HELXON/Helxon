@@ -17,6 +17,40 @@ import ThumbsUpIcon from '@/app/assets/contactUsPageIcons/Thumbs up.svg';
 import MessageCircleIcon from '@/app/assets/contactUsPageIcons/Message circle.svg';
 import './ContactUsPage.scss';
 
+const contactPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': ['WebPage', 'ContactPage'],
+  name: 'Contact Helxon - Enterprise Cybersecurity Experts',
+  url: 'https://helxon.com/contact-us',
+  description:
+    'Contact Helxon to discuss SOC-as-a-Service, MDR, and 24/7 threat monitoring. Speak directly with our security experts about protecting your organization.',
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Helxon',
+    url: 'https://helxon.com',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Helxon',
+    url: 'https://helxon.com',
+  },
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      telephone: '+1-604-499-5973',
+      email: 'contact@helxon.com',
+      contactType: 'Sales',
+      availableLanguage: ['English'],
+    },
+    {
+      '@type': 'ContactPoint',
+      email: 'support@helxon.com',
+      contactType: 'Customer Support',
+      availableLanguage: ['English'],
+    },
+  ],
+};
+
 export default function ContactUsPage() {
   const [formData, setFormData] = useState({
     name: '',
@@ -117,6 +151,10 @@ export default function ContactUsPage() {
 
   return (
     <div className="contact-us-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }}
+      />
       {/* Hero Section */}
       <section className="contact-us-page__hero">
         <div className="contact-us-page__hero-container">

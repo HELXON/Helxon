@@ -3,7 +3,6 @@
  * Central configuration for all SEO-related settings
  */
 
-import helxonImage from '@/app/assets/HelxonLogo.png';
 export const seoConfig = {
   // Base URL of the website
   baseUrl: 'https://helxon.com',
@@ -36,10 +35,10 @@ export const seoConfig = {
   
   // Default Open Graph Image
   ogImage: {
-    url: helxonImage.src,
-    width: 1200,
-    height: 630,
-    alt: 'Helxon Cybersecurity Solutions',
+    url: '/favicon.ico',
+    width: 64,
+    height: 64,
+    alt: 'Helxon logo',
   },
   
   // Keywords for each page

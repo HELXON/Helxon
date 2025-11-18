@@ -6,7 +6,6 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { BottomNavBar } from "@/components/BottomNavBar";
 import { Footer } from "@/components/Footer";
 import { StructuredData } from "@/components/StructuredData";
-import helxonImage from '@/app/assets/HelxonLogo.png';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,17 +40,18 @@ export const metadata = {
     siteName: 'Helxon',
     images: [
       {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Helxon - Enterprise Cybersecurity Solutions',
+        url: '/favicon.ico',
+        width: 64,
+        height: 64,
+        alt: 'Helxon logo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@helxon',
-    creator: '@helxon',
+    title: 'Helxon | Enterprise Cybersecurity & SOC-as-a-Service Solutions',
+    description: 'Enterprise-grade SOC-as-a-Service with 24/7 threat monitoring and Microsoft-powered security solutions.',
+    images: ['/favicon.ico'],
   },
   robots: {
     index: true,
