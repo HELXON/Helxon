@@ -4,11 +4,6 @@
   command = "npm run build"
   publish = ".next"
 
-# Next.js Runtime
-[functions]
-  node_bundler = "esbuild"
-  included_files = ["node_modules/**", ".next/**", "public/**"]
-
 # Ensure proper handling of Next.js routes including sitemaps
 [[plugins]]
   package = "@netlify/plugin-nextjs"
