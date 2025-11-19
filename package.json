@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "validate-sitemaps": "node scripts/validate-sitemaps.js",
+    "sitemap-report": "node scripts/generate-sitemap-report.js",
+    "postbuild": "echo '✅ Build complete! Sitemaps are generated at /sitemap.xml'"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^16.1.6",

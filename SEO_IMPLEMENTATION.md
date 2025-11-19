@@ -59,11 +59,13 @@ Implemented in `src/components/StructuredData.jsx`:
 - **LocalBusiness Schema**: Business hours, location, contact info
 - **Service Schema**: Services catalog (SOC-as-a-Service, VorXOC, Threat Hunting)
 
-### 4. **Sitemap**
-Located at `src/app/sitemap.js`:
-- Dynamically generated XML sitemap
-- Includes all main pages with priorities and update frequencies
-- Accessible at: `https://helxon.com/sitemap.xml`
+### 4. **Sitemap (Index Structure)**
+Located at `src/app/sitemap.xml/route.js` (index) and child sitemaps:
+- **Sitemap Index** (`/sitemap.xml`): Points to individual sitemaps
+- **Static Pages** (`/sitemap-0.xml`): Main pages (home, about, contact, FAQ, vorxoc)
+- **Blog Pages** (`/sitemap-1.xml`): Blog listing and individual blog posts
+- Scalable structure recommended by Google for growth
+- All accessible at: `https://helxon.com/sitemap.xml`
 
 ### 5. **Robots.txt**
 Located at `src/app/robots.js`:
@@ -155,7 +157,7 @@ export const metadata = {
 Create a `layout.js` file in the same directory with the metadata (see examples in `/contact-us/layout.js`, `/faq/layout.js`, `/blogs/layout.js`).
 
 ### Updating Sitemap
-Edit `src/app/sitemap.js` to add new pages:
+To add new static pages, edit `src/app/sitemap-0.xml/route.js`:
 
 ```javascript
 {
@@ -165,6 +167,16 @@ Edit `src/app/sitemap.js` to add new pages:
   priority: 0.7,
 }
 ```
+
+To add new blog posts, edit `src/app/sitemap-1.xml/route.js` or fetch them dynamically from Contentful.
+
+To add a new sitemap category (e.g., for products), create `src/app/sitemap-2.xml/route.js` and update the sitemap index at `src/app/sitemap.xml/route.js`.
+
+**Testing & Validation:**
+- `npm run validate-sitemaps` - Validates all sitemaps are accessible and properly formatted
+- `npm run sitemap-report` - Generates a detailed report of all URLs in your sitemaps
+
+See `SITEMAP_STRUCTURE.md` for detailed documentation.
 
 ### Updating Structured Data
 Edit `src/components/StructuredData.jsx` to add or modify schema data.
