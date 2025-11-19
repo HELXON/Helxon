@@ -11,6 +11,34 @@ const nextConfig = {
   // Add security and SEO headers
   async headers() {
     return [
+      // Sitemap XML files - ensure proper Content-Type
+      {
+        source: '/sitemap.xml',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/xml; charset=utf-8',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, s-maxage=3600',
+          },
+        ],
+      },
+      {
+        source: '/sitemap-:number.xml',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/xml; charset=utf-8',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, s-maxage=3600',
+          },
+        ],
+      },
+      // Security headers for all other pages
       {
         source: '/:path*',
         headers: [
