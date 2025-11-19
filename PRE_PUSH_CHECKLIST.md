@@ -12,12 +12,15 @@
 - ✅ `SITEMAP_STRUCTURE.md` - Technical documentation
 - ✅ `SITEMAP_QUICK_START.md` - Quick reference
 - ✅ `README_SITEMAP.md` - Implementation summary
+- ✅ `NETLIFY_DEPLOYMENT_GUIDE.md` - Netlify deployment guide
+- ✅ `netlify.toml` - Netlify configuration
 - ✅ `.vscode/tasks.json` - VS Code tasks
 
 ### Files Modified
 - ✅ `package.json` - Added sitemap validation scripts
 - ✅ `SEO_IMPLEMENTATION.md` - Updated sitemap documentation
 - ✅ `src/app/layout.js` - Updated to Google Analytics 4 (gtag.js G-2HRGR1XEKE)
+- ✅ `next.config.mjs` - Added proper Content-Type headers for sitemaps
 
 ### Files Deleted
 - ✅ `src/app/sitemap.js` - Replaced with new structure
@@ -57,14 +60,16 @@ git add .vscode/tasks.json
 git add SEO_IMPLEMENTATION.md
 
 # Commit
-git commit -m "Implement sitemap index structure and update Google Analytics
+git commit -m "Implement sitemap index structure, update GA, and add Netlify config
 
 - Add sitemap index with child sitemaps (sitemap-0.xml, sitemap-1.xml)
 - Create validation and reporting scripts
 - Update documentation
 - Add automatic sitemap generation on build
 - Environment-aware URLs (localhost vs production)
-- Update to Google Analytics 4 (gtag.js G-2HRGR1XEKE)"
+- Update to Google Analytics 4 (gtag.js G-2HRGR1XEKE)
+- Add netlify.toml for proper Next.js routing on Netlify
+- Fix Content-Type headers for sitemaps (application/xml)"
 ```
 
 ### 5. Files That Should NOT Be Pushed

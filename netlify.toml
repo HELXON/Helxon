@@ -1,0 +1,49 @@
+# Netlify Configuration for Next.js 16 with Sitemaps
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+# Next.js Runtime
+[functions]
+  node_bundler = "esbuild"
+  included_files = ["node_modules/**", ".next/**", "public/**"]
+
+# Ensure proper handling of Next.js routes including sitemaps
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Headers for sitemap files
+[[headers]]
+  for = "/sitemap*.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+    Cache-Control = "public, max-age=3600, s-maxage=3600"
+    X-Robots-Tag = "all"
+
+# Headers for robots.txt
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+    Cache-Control = "public, max-age=3600"
+
+# Security headers for all pages
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    X-DNS-Prefetch-Control = "on"
+    Referrer-Policy = "origin-when-cross-origin"
+
+# Redirects (if needed in the future)
+# [[redirects]]
+#   from = "/old-path"
+#   to = "/new-path"
+#   status = 301
+
+# Environment variables (reference only - set these in Netlify UI)
+# [build.environment]
+#   NODE_VERSION = "20"
+
