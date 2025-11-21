@@ -162,13 +162,13 @@ export default function ContactUsPage() {
             className="contact-us-page__hero-content"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
           >
             <motion.div
               className="contact-us-page__hero-logo"
               initial={{ opacity: 0, scale: 0.85, y: -30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3, type: 'spring' }}
+              transition={{ duration: 0.35, delay: 0.15, type: 'spring' }}
             >
               <img src={HeroLogo.src} alt="Helxon logo" />
             </motion.div>
@@ -176,7 +176,7 @@ export default function ContactUsPage() {
               className="contact-us-page__hero-title"
               initial={{ opacity: 0, y: 35 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
             >
               Contact Us
             </motion.h1>
@@ -184,7 +184,7 @@ export default function ContactUsPage() {
               className="contact-us-page__hero-subtitle"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.3, delay: 0.25 }}
             >
               Ready to transform your security posture? Let's discuss how Helxon can help protect your organization from cyber threats.
             </motion.p>
@@ -201,7 +201,7 @@ export default function ContactUsPage() {
               className="contact-us-page__form-wrapper"
               initial={{ opacity: 0, x: -60 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
             >
               <h2 className="contact-us-page__section-title">Contact Us</h2>
               
@@ -210,7 +210,7 @@ export default function ContactUsPage() {
                   className="contact-us-page__form-field"
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: 0.7 }}
+                  transition={{ duration: 0.2, delay: 0.35 }}
                 >
                   <label className="contact-us-page__form-label">
                     Full Name *
@@ -230,7 +230,7 @@ export default function ContactUsPage() {
                   className="contact-us-page__form-field"
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: 0.75 }}
+                  transition={{ duration: 0.2, delay: 0.375 }}
                 >
                   <label className="contact-us-page__form-label">
                     Email *
@@ -250,7 +250,7 @@ export default function ContactUsPage() {
                   className="contact-us-page__form-field"
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: 0.8 }}
+                  transition={{ duration: 0.2, delay: 0.4 }}
                 >
                   <label className="contact-us-page__form-label">
                     Company Name *
@@ -270,7 +270,7 @@ export default function ContactUsPage() {
                   className="contact-us-page__form-field"
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: 0.85 }}
+                  transition={{ duration: 0.2, delay: 0.425 }}
                 >
                   <label className="contact-us-page__form-label">
                     Message *
@@ -292,7 +292,7 @@ export default function ContactUsPage() {
                   disabled={formStatus.loading}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.9 }}
+                  transition={{ duration: 0.2, delay: 0.45 }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -316,13 +316,13 @@ export default function ContactUsPage() {
               className="contact-us-page__info-wrapper"
               initial={{ opacity: 0, x: 60 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
+              transition={{ duration: 0.3, delay: 0.35 }}
             >
               <motion.div
                 className="contact-us-page__illustration"
                 initial={{ rotate: -5, scale: 0.9 }}
                 animate={{ rotate: 0, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
+                transition={{ duration: 0.3, delay: 0.4 }}
               >
                 <DotLottieReact
                   src="https://lottie.host/ee01f240-c125-4a09-95cd-3ae2de372d7e/usds4LHpI7.lottie"
@@ -336,13 +336,13 @@ export default function ContactUsPage() {
                   className="contact-us-page__info-item"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 0.9 }}
+                  transition={{ duration: 0.25, delay: 0.45 }}
                 >
                   <motion.div
                     className="contact-us-page__info-icon-wrapper"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    transition={{ type: "spring", stiffness: 260, damping: 20, delay: 1.0 }}
+                    transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.5 }}
                   >
                     <img src={MailIcon.src} alt="Email" />
                   </motion.div>
@@ -356,13 +356,13 @@ export default function ContactUsPage() {
                   className="contact-us-page__info-item"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 1.0 }}
+                  transition={{ duration: 0.25, delay: 0.5 }}
                 >
                   <motion.div
                     className="contact-us-page__info-icon-wrapper"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    transition={{ type: "spring", stiffness: 260, damping: 20, delay: 1.1 }}
+                    transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.55 }}
                   >
                     <img src={PhoneIcon.src} alt="Phone" />
                   </motion.div>
@@ -376,13 +376,13 @@ export default function ContactUsPage() {
                   className="contact-us-page__info-item"
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: 1.1 }}
+                  transition={{ duration: 0.25, delay: 0.55 }}
                 >
                   <motion.div
                     className="contact-us-page__info-icon-wrapper"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    transition={{ type: "spring", stiffness: 260, damping: 20, delay: 1.2 }}
+                    transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.6 }}
                   >
                     <img src={ClockIcon.src} alt="Clock" />
                   </motion.div>
@@ -404,7 +404,7 @@ export default function ContactUsPage() {
             className="contact-us-page__departments-header"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.2 }}
+            transition={{ duration: 0.25, delay: 0.6 }}
           >
             <h2 className="contact-us-page__departments-title">Get the Right Help</h2>
             <p className="contact-us-page__departments-subtitle">
@@ -419,14 +419,14 @@ export default function ContactUsPage() {
                 className="contact-us-page__department-card"
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 1.3 + index * 0.08 }}
+                transition={{ duration: 0.25, delay: 0.65 + index * 0.04 }}
                 whileHover={{ y: -10 }}
               >
                 <motion.div
                   className="contact-us-page__department-icon-wrapper"
                   initial={{ scale: 0, rotate: -180 }}
                   animate={{ scale: 1, rotate: 0 }}
-                  transition={{ type: "spring", stiffness: 200, damping: 15, delay: 1.4 + index * 0.08 }}
+                  transition={{ type: "spring", stiffness: 200, damping: 15, delay: 0.7 + index * 0.04 }}
                   whileHover={{ scale: 1.1, rotate: 5 }}
                 >
                   <img src={dept.icon.src} alt={dept.title} />
