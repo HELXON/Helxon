@@ -15,13 +15,13 @@ export function AboutUsHero() {
           className="about-us-hero__content"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
         >
           <motion.div
             className="about-us-hero__logo-wrapper"
             initial={{ opacity: 0, scale: 0.85, y: -30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.5, type: 'spring' }}
+            transition={{ duration: 0.45, delay: 0.25, type: 'spring' }}
           >
             <img src={HeroMark.src} alt="Helxon emblem" />
           </motion.div>
@@ -29,7 +29,7 @@ export function AboutUsHero() {
             className="about-us-hero__title"
             initial={{ opacity: 0, y: 35 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
+            transition={{ duration: 0.4, delay: 0.35 }}
           >
             About Us
           </motion.h1>
@@ -37,7 +37,7 @@ export function AboutUsHero() {
             className="about-us-hero__description"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
+            transition={{ duration: 0.4, delay: 0.45 }}
           >
             We are cybersecurity professionals dedicated to removing fear from the digital world through intelligent, proactive defense solutions.
           </motion.p>

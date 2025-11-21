@@ -7,6 +7,8 @@ import { WhyChooseVorxoc } from '@/components/PlatformComponents/WhyChooseVorxoc
 import { ReadyToSecure } from '@/components/PlatformComponents/ReadyToSecure';
 import './VorxocPage.scss';
 
+export const dynamic = 'force-static';
+
 export const metadata = {
   title: 'VorXOC Platform - Unified Security Operations Dashboard',
   description:
@@ -64,7 +66,7 @@ const vorxocServiceSchema = {
   areaServed: {
     '@type': 'Place',
     name: 'Global',
-  },
+    },
   offers: {
     '@type': 'Offer',
     availability: 'https://schema.org/InStock',
@@ -89,4 +91,3 @@ export default function VorxocPage() {
     </div>
   );
 }
-

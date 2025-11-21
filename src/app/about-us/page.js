@@ -5,6 +5,8 @@ import { AboutUsPartners } from '@/components/AboutUsComponents/AboutUsPartners'
 import { AboutUsCTA } from '@/components/AboutUsComponents/AboutUsCTA';
 import './AboutUsPage.scss';
 
+export const dynamic = 'force-static';
+
 export const metadata = {
   title: 'About Us - Our Mission & Cybersecurity Expertise',
   description:

@@ -56,7 +56,7 @@ export function AboutUsCapabilities() {
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
         >
           What We Deliver
         </motion.h2>
@@ -65,7 +65,7 @@ export function AboutUsCapabilities() {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
         >
           The core capabilities that make Helxon your trusted security partner
         </motion.p>
@@ -76,7 +76,7 @@ export function AboutUsCapabilities() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.4 }}
           />
 
           <div className="about-us-capabilities__surface-inner">
@@ -93,7 +93,7 @@ export function AboutUsCapabilities() {
                   initial={{ opacity: 0, x: -40 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1 * index }}
+                  transition={{ duration: 0.25, delay: 0.05 * index }}
                   whileHover={{ scale: index === activeIndex ? 1 : 1.03 }}
                   whileTap={{ scale: 0.97 }}
                 >
@@ -107,13 +107,13 @@ export function AboutUsCapabilities() {
               className="about-us-capabilities__panel"
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.25 }}
             >
               <motion.div
                 className="about-us-capabilities__panel-icon"
                 initial={{ opacity: 0, scale: 0.7 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.45, delay: 0.1 }}
+                transition={{ duration: 0.225, delay: 0.05 }}
                 style={{
                   '--icon-color': activeCapability.iconColor,
                   backgroundColor: hexToRgba(activeCapability.iconColor, 0.18),
@@ -130,7 +130,7 @@ export function AboutUsCapabilities() {
                 className="about-us-capabilities__panel-text"
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, delay: 0.15 }}
+                transition={{ duration: 0.225, delay: 0.075 }}
               >
                 {activeCapability.description}
               </motion.p>

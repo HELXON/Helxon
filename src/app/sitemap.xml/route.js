@@ -11,11 +11,9 @@ export async function GET(request) {
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>${baseUrl}/sitemap-0.xml</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
   </sitemap>
   <sitemap>
     <loc>${baseUrl}/sitemap-1.xml</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
   </sitemap>
 </sitemapindex>`;
 

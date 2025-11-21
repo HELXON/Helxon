@@ -5,31 +5,26 @@ export async function GET() {
   const pages = [
     {
       url: baseUrl,
-      lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
       url: `${baseUrl}/vorxoc`,
-      lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/about-us`,
-      lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/contact-us`,
-      lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/faq`,
-      lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
@@ -41,7 +36,6 @@ ${pages
   .map(
     (page) => `  <url>
     <loc>${page.url}</loc>
-    <lastmod>${page.lastModified.toISOString()}</lastmod>
     <changefreq>${page.changeFrequency}</changefreq>
     <priority>${page.priority}</priority>
   </url>`

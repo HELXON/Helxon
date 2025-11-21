@@ -82,7 +82,7 @@ After years of seeing businesses struggle with complex security tools, overwhelm
               key={activeTab}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
             >
               {tabs[activeIndex]?.content.split('\n').map((paragraph, idx) => (
                 <p key={idx}>{paragraph.trim()}</p>
@@ -94,7 +94,7 @@ After years of seeing businesses struggle with complex security tools, overwhelm
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
             >
               <motion.button
                 onClick={() => goToTab(activeIndex - 1)}
@@ -118,7 +118,7 @@ After years of seeing businesses struggle with complex security tools, overwhelm
             initial={{ opacity: 0, scale: 0.9, x: 50 }}
             whileInView={{ opacity: 1, scale: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.4 }}
           >
             <div className="about-us-vision__image">
               <DotLottieReact

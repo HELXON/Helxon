@@ -92,7 +92,7 @@ export function SecurityToolsIntegration() {
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
         >
           Security Tools Integration
         </motion.h2>
@@ -101,7 +101,7 @@ export function SecurityToolsIntegration() {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
         >
           VorXOC seamlessly integrates with your existing security infrastructure. We support all major security platforms and tools.
         </motion.p>
@@ -112,7 +112,7 @@ export function SecurityToolsIntegration() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.4 }}
           />
 
           <div className="security-tools-integration__surface-inner">
@@ -130,7 +130,7 @@ export function SecurityToolsIntegration() {
                   initial={{ opacity: 0, x: -40 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1 * index }}
+                  transition={{ duration: 0.25, delay: 0.05 * index }}
                   whileHover={{ scale: selectedCategory === category ? 1 : 1.03 }}
                   whileTap={{ scale: 0.97 }}
                 >
@@ -145,7 +145,7 @@ export function SecurityToolsIntegration() {
               className="security-tools-integration__panel"
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.25 }}
             >
               <div className="security-tools-integration__logos">
                 {logosData[selectedCategory].map((item, index) => (
@@ -154,7 +154,7 @@ export function SecurityToolsIntegration() {
                     className="security-tools-integration__logo-wrapper"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, delay: index * 0.05 }}
+                    transition={{ duration: 0.2, delay: index * 0.025 }}
                     whileHover={{ scale: 1.1 }}
                   >
                     <img
@@ -169,7 +169,7 @@ export function SecurityToolsIntegration() {
                 className="security-tools-integration__note"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.4, delay: 0.3 }}
+                transition={{ duration: 0.2, delay: 0.15 }}
               >
                 +Many more integrations available
               </motion.p>

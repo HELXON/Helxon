@@ -26,7 +26,7 @@ export function AboutUsPartners() {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.4 }}
         >
           <div className="about-us-partners__logos">
             {partners.map((partner, index) => (
@@ -36,7 +36,7 @@ export function AboutUsPartners() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 * index }}
+                transition={{ duration: 0.25, delay: 0.05 * index }}
                 whileHover={{ scale: 1.1 }}
               >
                 <img
