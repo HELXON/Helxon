@@ -6,7 +6,6 @@ export async function GET() {
   const blogPages = [
     {
       url: `${baseUrl}/blogs`,
-      lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
@@ -26,7 +25,6 @@ ${blogPages
   .map(
     (page) => `  <url>
     <loc>${page.url}</loc>
-    <lastmod>${page.lastModified.toISOString()}</lastmod>
     <changefreq>${page.changeFrequency}</changefreq>
     <priority>${page.priority}</priority>
   </url>`
