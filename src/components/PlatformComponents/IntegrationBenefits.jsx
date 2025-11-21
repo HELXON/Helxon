@@ -35,7 +35,7 @@ export function IntegrationBenefits() {
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.4 }}
         >
           <h2 className="integration-benefits__title">Integration Benefits</h2>
           <p className="integration-benefits__subtitle">
@@ -53,7 +53,7 @@ export function IntegrationBenefits() {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
+                transition={{ duration: 0.3, delay: index * 0.075 }}
                 whileHover={{ y: -10, scale: 1.02 }}
               >
                 <motion.div
@@ -62,7 +62,7 @@ export function IntegrationBenefits() {
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.3 + index * 0.15, type: 'spring' }}
+                  transition={{ duration: 0.25, delay: 0.15 + index * 0.075, type: 'spring' }}
                 >
                   <Icon
                     className="integration-benefits__icon"

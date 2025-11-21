@@ -25,7 +25,7 @@ export function ReadyToSecure() {
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.4 }}
         >
           Ready to <span className="ready-to-secure__title--green">Secure</span> Your Business?
         </motion.h2>
@@ -34,7 +34,7 @@ export function ReadyToSecure() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
         >
           Join hundreds of companies that trust VorXOC to protect their digital assets.
         </motion.p>
@@ -44,7 +44,7 @@ export function ReadyToSecure() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
         >
           <motion.button
             className="ready-to-secure__button ready-to-secure__button--primary"

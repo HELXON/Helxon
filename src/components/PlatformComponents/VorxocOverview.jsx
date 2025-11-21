@@ -55,7 +55,7 @@ export function VorxocOverview() {
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.4 }}
         >
           <h2 className="vorxoc-overview__title">What Is VorXOC?</h2>
           <p className="vorxoc-overview__description">
@@ -70,7 +70,7 @@ export function VorxocOverview() {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
           >
             {/* Dashboard Image */}
             <div className="vorxoc-overview__dashboard">
@@ -89,7 +89,7 @@ export function VorxocOverview() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                transition={{ duration: 0.25, delay: 0.2 + index * 0.05 }}
               >
                 <div className="vorxoc-overview__feature-line" />
                 <div className="vorxoc-overview__feature-content">
@@ -106,7 +106,7 @@ export function VorxocOverview() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.15 }}
           >
             {features.map((feature, index) => (
               <motion.div
@@ -115,7 +115,7 @@ export function VorxocOverview() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                transition={{ duration: 0.25, delay: 0.2 + index * 0.05 }}
               >
                 <Check className="vorxoc-overview__feature-icon" />
                 <span className="vorxoc-overview__feature-text">{feature.title}</span>
@@ -130,7 +130,7 @@ export function VorxocOverview() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 0.3, delay: 0.3 }}
         >
           <motion.button
             className="vorxoc-overview__cta"

@@ -35,7 +35,7 @@ export function WhyChooseVorxoc() {
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.4 }}
         >
           <h2 className="why-choose-vorxoc__title">Why Choose VorXOC Solutions?</h2>
           <p className="why-choose-vorxoc__description">
@@ -60,7 +60,7 @@ export function WhyChooseVorxoc() {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
+                transition={{ duration: 0.3, delay: index * 0.075 }}
                 whileHover={{ y: -10, scale: 1.02 }}
               >
                 <motion.div
@@ -68,7 +68,7 @@ export function WhyChooseVorxoc() {
                   initial={{ scale: 0, rotate: -180 }}
                   whileInView={{ scale: 1, rotate: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.2 + index * 0.15, type: 'spring' }}
+                  transition={{ duration: 0.25, delay: 0.1 + index * 0.075, type: 'spring' }}
                 >
                   <Icon className="why-choose-vorxoc__icon" />
                 </motion.div>

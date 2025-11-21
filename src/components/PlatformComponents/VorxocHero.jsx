@@ -25,13 +25,13 @@ export function VorxocHero() {
             className="vorxoc-hero__hero-content"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
           >
             <motion.div
               className="vorxoc-hero__hero-logo"
               initial={{ opacity: 0, scale: 0.85, y: -30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3, type: 'spring' }}
+              transition={{ duration: 0.35, delay: 0.15, type: 'spring' }}
             >
               <Image 
                 src={vorxocLogo} 
@@ -53,13 +53,13 @@ export function VorxocHero() {
               className="vorxoc-hero__text"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+              transition={{ duration: 0.3, delay: 0.25 }}
             >
               <motion.h1
                 className="vorxoc-hero__title"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
+                transition={{ duration: 0.3, delay: 0.3 }}
               >
                 <span className="vorxoc-hero__title--green green-logo">
                   <Image 
@@ -81,7 +81,7 @@ export function VorxocHero() {
                 className="vorxoc-hero__description"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
+                transition={{ duration: 0.3, delay: 0.35 }}
               >
                 VorXOC delivers comprehensive cybersecurity monitoring, threat detection through our virtual Security Operations Center. Get 24/7 protection with expert analysts, AI-powered threat intelligence, and rapid response capabilities.
               </motion.p>
@@ -91,7 +91,7 @@ export function VorxocHero() {
                 onClick={handleStartTrial}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 }}
+                transition={{ duration: 0.25, delay: 0.4 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -104,7 +104,7 @@ export function VorxocHero() {
               className="vorxoc-hero__illustration"
               initial={{ opacity: 0, x: 50, scale: 0.9 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              transition={{ duration: 0.3, delay: 0.3 }}
             >
               <DotLottieReact
                 src="https://lottie.host/22e07541-6ebb-4b24-964a-c0d26c33d66a/p9f7ttqsyd.lottie"
