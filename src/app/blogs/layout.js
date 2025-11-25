@@ -4,7 +4,7 @@ export const metadata = {
     icon: [
       { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
       { url: "/favicon.ico", sizes: "any" },
-    ],
+    ]},
   description:
     "Explore Helxon's cybersecurity blog for expert insights, industry updates, threat intelligence, best practices, and in-depth analysis of emerging security trends and digital transformation.",
   keywords: [
