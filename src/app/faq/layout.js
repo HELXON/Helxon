@@ -1,5 +1,10 @@
 export const metadata = {
   title: 'FAQ - Frequently Asked Questions About SOC-as-a-Service',
+  icons: {
+    icon: [
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
   description:
     "Get answers to common questions about Helxon's SOC-as-a-Service, pricing, Microsoft Sentinel integration, compliance, threat hunting, and how our security solutions protect businesses of all sizes.",
   keywords: [
