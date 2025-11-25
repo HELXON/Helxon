@@ -27,7 +27,7 @@ export const metadata = {
     icon: [
       { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
       { url: "/favicon.ico", sizes: "any" },
-    ],
+    ]},
   description: 'Helxon provides 24/7 SOC-as-a-Service, threat detection, and managed security operations powered by Microsoft Sentinel and Defender.',
   keywords: 'cybersecurity, SOC-as-a-Service, threat detection, managed security, Microsoft Sentinel, Azure security, VorXOC',
   authors: [{ name: 'Helxon' }],
