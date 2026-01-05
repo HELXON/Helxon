@@ -118,6 +118,20 @@ export function BottomNavBar() {
               >
                 FAQ
               </button>
+              <button
+                type="button"
+                onClick={() => handleNavigate("/privacy-policy")}
+                className={styles["bottom-nav__dropdown-item"]}
+              >
+                Privacy Policy
+              </button>
+              <button
+                type="button"
+                onClick={() => handleNavigate("/terms-and-conditions")}
+                className={styles["bottom-nav__dropdown-item"]}
+              >
+                Terms & Conditions
+              </button>
             </div>
           ) : null}
         </div>

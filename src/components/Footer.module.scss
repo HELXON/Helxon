@@ -28,7 +28,14 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    text-align: left;
   }
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .copyright {
@@ -55,6 +62,29 @@
   }
 }
 
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.link {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: #fed92b;
+    border-color: rgba(254, 217, 43, 0.6);
+    background: rgba(254, 217, 43, 0.08);
+  }
+}
+
 @media (max-width: 480px) {
   .footer {
     padding: 2rem 0 2.25rem;
@@ -67,6 +97,10 @@
   .copyright,
   .tagline {
     font-size: 0.8125rem;
+  }
+
+  .links {
+    justify-content: center;
   }
 }
 

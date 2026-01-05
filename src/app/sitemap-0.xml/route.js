@@ -28,6 +28,16 @@ export async function GET() {
       changeFrequency: 'monthly',
       priority: 0.6,
     },
+    {
+      url: `${baseUrl}/privacy-policy`,
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/terms-and-conditions`,
+      changeFrequency: 'yearly',
+      priority: 0.5,
+    },
   ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
